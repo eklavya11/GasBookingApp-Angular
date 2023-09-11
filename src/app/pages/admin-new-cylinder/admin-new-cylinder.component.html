@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <h1><i class="fa-solid fa-circle-plus"></i> Create New Cylinder</h1>
+                <hr>
+                <form #addCylinderForm="ngForm" (ngSubmit)="onSubmit(addCylinderForm)" [noValidate]="false">
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <div class="form-group">
+                                <label for="cylinderPrice"><b>Price</b></label>
+                                <select class="form-control" ngModel name="price" required>
+                                    <option *ngFor="let price of prices" [value]="price">{{ price }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <div class="form-group">
+                                <label for="cylinderStrapColor"><b>Strap Color</b></label>
+                                <select class="form-control" ngModel name="strapColor" required>
+                                    <option *ngFor="let color of colors" [value]="color">{{ color }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <div class="form-group">
+                                <label for="cylinderType"><b>Type</b></label>
+                                <select class="form-control" ngModel name="type" required>
+                                    <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+                                </select>
+                            </div>
+                            
+                        </div>
+                        <div class="col-12 mt-3">
+                            <div class="form-group">
+                                <label for="cylinderWeight"><b>Weight</b></label>
+                                <select class="form-control" ngModel name="weight" required>
+                                    <option *ngFor="let weight of weights" [value]="weight">{{ weight }} kg</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary mt-3">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
